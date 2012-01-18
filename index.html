@@ -42,12 +42,28 @@
 					<p><a class="btn" href="#">View details &raquo;</a></p>
 				</div>
 				<div class="span-one-third">
+					<h2>What up!</h2>
+					<blockquote>
+					  	<p>“Think of me like Yoda, but instead of being little and green I wear suits and I'm awesome. I'm your bro—I'm Broda!”</p>
+					  	<small>Barney Stinson</small>
+					</blockquote>
+				</div>
+				<div class="span-one-third">
 					<h2>Ultimo evento</h2>
 					<div id="cycle"></div>
 				</div>
+			</div>
+
+			<h1>Repositories</h1>
+			<div class="row">
 				<div class="span-one-third">
-					<h2>Repositories</h2>
-					<ul id="repositories" class=""></ul>
+					<h3>We've had fun on these projects</h3>
+					<p>
+						You can fork them and contribute or use them to learn some...
+					</p>
+				</div>
+				<div class="span-two-thirds">
+					<ul id="repositories" class="unstyled"></ul>
 				</div>
 			</div>
 
@@ -59,14 +75,24 @@
 
 		<script id="tmpl-repo" type="text/hogan-tmpl">
 		<li>
-			<div>
+			<h2>
 				<a href="{{html_url}}"><strong>{{name}}</strong></a>
-				{{#language}} / <em>{{language}}</em>{{/language}}
-			</div>
+			</h2>
+			<p>
+				Last update on: <em>{{updated_at}}</em>
+				{{#language}}Language: <em>{{language}}</em>{{/language}}
+			</p>
+
 			{{#description}}
-			<div>{{description}}</div>
+			<blockquote>
+				<p>{{description}}</p>
+			</blockquote>
 			{{/description}}
-			<!--<div>Last Update:{{updated_at}}</div>-->
+			{{^description}}
+			<p>no description available</p>
+			{{/description}}
+
+			<pre>{{clone_url}}</pre>
 		</li>
 		</script>
 
