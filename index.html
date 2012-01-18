@@ -8,16 +8,9 @@
 
 		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css"/>
 
-		<script src="http://twitter.github.com/hogan.js/builds/1.0.3/hogan.js"></script>
-		<script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		
-
-		<script src="/js/jquery.servicelocator.js"></script>
-		<script src="/js/services.github.js"></script>
-		<script src="/js/github.js"></script>
-
-		<script src="/js/script.js"></script>
+		<!-- Flickr -->
+		<link href="/js/flickr/style.css" rel="stylesheet" type="text/css" media="all" /> 
+		<link href="/js/flickr/colorbox/colorbox.css" rel="stylesheet" type="text/css" media="screen" /> 
 	</head>
 
 	<body>
@@ -49,9 +42,8 @@
 					<p><a class="btn" href="#">View details &raquo;</a></p>
 				</div>
 				<div class="span-one-third">
-					<h2>Heading</h2>
-					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-					<p><a class="btn" href="#">View details &raquo;</a></p>
+					<h2>Ultimo evento</h2>
+					<div id="cycle"></div>
 				</div>
 				<div class="span-one-third">
 					<h2>Repositories</h2>
@@ -79,5 +71,23 @@
 		</script>
 
 	</body>
+
+	<!-- Libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="http://twitter.github.com/hogan.js/builds/1.0.3/hogan.js"></script>
+	<script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+
+	<!-- Flickr -->
+	<script src="/js/flickr/colorbox/jquery.colorbox-min.js"></script>
+	<script src="/js/flickr/cycle/jquery.cycle.all.min.js"></script>
+	<script src="/js/flickr/jflickrfeed.min.js"></script>
+
+	<!-- Github -->
+	<script src="/js/github/jquery.servicelocator.js"></script>
+	<script src="/js/github/services.github.js"></script>
+	<script src="/js/github/github.js"></script>
+
+	<!-- Custom -->	
+	<script src="/js/script.js"></script>
 
 	</html>
