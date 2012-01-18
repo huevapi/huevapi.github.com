@@ -7,8 +7,10 @@ GH = {
 
 	getRepos: function(){
 		this.api.getOrgRepos('huevapi', function(r){
+			var repoTmpl = Hogan.compile($("#tmpl-repo").html());
+			console.log(r)
 			_.each(r, function(repo){
-				$("#repositories").append($("<li></li>").html(repo.name));
+				$("#repositories").append(repoTmpl.render(repo));
 			})
 		})
 	}

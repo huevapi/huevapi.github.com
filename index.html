@@ -55,7 +55,7 @@
 				</div>
 				<div class="span-one-third">
 					<h2>Repositories</h2>
-					<ul id="repositories"></ul>
+					<ul id="repositories" class=""></ul>
 				</div>
 			</div>
 
@@ -64,6 +64,19 @@
 			</footer>
 
 		</div> <!-- /container -->
+
+		<script id="tmpl-repo" type="text/hogan-tmpl">
+		<li>
+			<div>
+				<a href="{{html_url}}"><strong>{{name}}</strong></a>
+				{{#language}} / <em>{{language}}</em>{{/language}}
+			</div>
+			{{#description}}
+			<div>{{description}}</div>
+			{{/description}}
+			<!--<div>Last Update:{{updated_at}}</div>-->
+		</li>
+		</script>
 
 	</body>
 
