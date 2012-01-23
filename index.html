@@ -6,21 +6,30 @@
 	    <meta name="description" content="">
 	    <meta name="author" content="">
 
+	    <!-- Bootstrap -->
 		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css"/>
 
 		<!-- Flickr -->
-		<link href="/js/flickr/style.css" rel="stylesheet" type="text/css" media="all" /> 
-		<link href="/js/flickr/colorbox/colorbox.css" rel="stylesheet" type="text/css" media="screen" /> 
+		<link href="/js/flickr/style.css" rel="stylesheet" /> 
+		<link href="/js/flickr/colorbox/colorbox.css" rel="stylesheet" /> 
+
+		<!-- Custom -->
+		<link href="/css/style.css" rel="stylesheet"/> 
+
 	</head>
 
 	<body>
 
-		<div class="topbar">
+		<div class="topbar" data-scrollspy="scrollspy">
 			<div class="fill">
 				<div class="container">
 					<a class="brand" href="#">Huevapi</a>
 					<ul class="nav">
-						<li class="active"><a href="#">Home</a></li>
+						<li class="active"><a href="#home">Inicio</a></li>
+						<li><a href="#repositories">Projectos</a></li>
+						<li><a href="#prepare">Venir preparado</a></li>
+						<li><a href="#used">APIs/Frameworks</a></li>
+						<li><a href="#collaborate">Aportar a la página</a></li>
 					</ul>
 				</div>
 			</div>
@@ -28,7 +37,7 @@
 
 		<div class="container">
 
-			<div class="hero-unit">
+			<div id="home" class="hero-unit">
 				<h1>Let's code!</h1>
 				<p>Bienvenidos los computines que les gusta crear cosas. Los que no, no.</p>
 				<p><a class="btn primary large">Learn more &raquo;</a></p>
@@ -54,18 +63,54 @@
 				</div>
 			</div>
 
-			<h1>Repositories</h1>
-			<div class="row">
-				<div class="span-one-third">
-					<h3>We've had fun on these projects</h3>
-					<p>
-						You can fork them and contribute or use them to learn some...
-					</p>
+			<section id="repositories">
+				<h1>Projectos</h1>
+				<div class="row">
+					<div class="span-one-third">
+						<p>
+							Estos son algunos de los projectos en los que hemos tra...jugado
+						</p>
+						<p>
+							Si te interesa algo o te dan ganas de hacer mejoras haz un fork y colaboramos nomas...
+						</p>
+					</div>
+					<div class="span-two-thirds">
+						<h2>Repositorios</h2>
+						<ul id="repo-list" class="unstyled"></ul>
+					</div>
 				</div>
-				<div class="span-two-thirds">
-					<ul id="repositories" class="unstyled"></ul>
+			</section>
+
+			<section id="prepare">
+				<h1>Como llego preparado</h1>
+				<h4>Es muy importante llegar preparado para no perder tiempo instalando y configurando cosas. Aqui encontraras los básico que necesitaras para todos los huevapis, a demás publicaremos cosas específicas por evento.</h4>
+				
+			</section>
+
+			<section id="used">
+				<h1>API y Frameworks</h1>
+				<h4>Aqui listaremos todas las API, Frameworks, librerias, snippets y cualquier pedaso de codigo que hallamos usado en los huevapis.</h4>
+				<div class="row">
+					<div class="span-one-third">
+						<h4>APIs</h4>
+						<ul id="used-apis" class="unstyled"></ul>
+					</div>
+					<div class="span-one-third">
+						<h4>Frameworks / Libraries</h4>
+						<ul id="used-libs" class="unstyled"></ul>
+					</div>
+					<div class="span-one-third">
+						<h4>Otros</h4>
+						<ul id="used-others" class="unstyled"></ul>
+					</div>
 				</div>
-			</div>
+				<ul>
+			</section>
+
+			<section id="collaborate">
+				<h1>¿Como aporto contenido a la pagina?</h1>
+				<p>Para aportar tienes que hacer un fork del repositorio de la página hacer tus modificaciones y luego hacer un pull request</p>
+			</section>
 
 			<footer>
 				<p>&copy; Huevapi 2012</p>
@@ -96,6 +141,40 @@
 		</li>
 		</script>
 
+		<script id="tmpl-apis" type="text/hogan-tmpl">
+		<li>
+			<h5>
+				<a href="{{url}}" target="_blank"><strong>{{name}}</strong></a>
+			</h5>
+			<ul>
+			{{#libraries}}	
+				<li><a href="{{url}}" target="_blank">{{name}}</a></li>
+			{{/libraries}}
+			</ul>
+		</li>
+		</script>
+
+		<script id="tmpl-libs" type="text/hogan-tmpl">
+		<li>
+			<h5>
+				<strong>{{name}}</strong>
+			</h5>
+			<ul>
+			{{#content}}	
+				<li><a href="{{url}}" target="_blank">{{name}}</a></li>
+			{{/content}}
+			</ul>	
+		</li>
+		</script>
+
+		<script id="tmpl-others" type="text/hogan-tmpl">
+		<li>
+			<h5>
+				<a href="{{url}}"><strong>{{name}}</strong></a>
+			</h5>			
+		</li>
+		</script>
+
 	</body>
 
 	<!-- Libraries -->
@@ -112,6 +191,9 @@
 	<script src="/js/github/jquery.servicelocator.js"></script>
 	<script src="/js/github/services.github.js"></script>
 	<script src="/js/github/github.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="/js/bootstrap/bootstrap-scrollspy.js"></script>
 
 	<!-- Custom -->	
 	<script src="/js/script.js"></script>

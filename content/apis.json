@@ -1,0 +1,45 @@
+{
+	"apis":[
+		{
+			"name"		:	"Twitter API",
+			"url"		:	"https://dev.twitter.com/",
+			"libraries"	:	[
+				{"name":"jsOAuth", "url":"https://github.com/bytespider/jsOAuth/downloads", "lang":"javascript"},
+				{"name":"SpazCore", "url":"http://github.com/funkatron/spazcore/", "lang":"javascript"}
+			]
+		}
+	],
+
+	"libs":[
+		{
+			"name"		:	"Javascript", 
+			"content"	:	[
+				{"name":"test", "url":"http://foo.bar"}
+			]
+		},
+		{
+			"name"		:	"Python", 
+			"content"	:	[
+
+			]
+		},
+		{
+			"name"		:	"Ruby", 
+			"content"	:	[
+
+			]
+		},
+		{
+			"name"		:	"PHP", 
+			"content"	:	[
+
+			]
+		}
+
+	],
+
+	"others": [
+		{ "name" :"otra cosa", "url" :"http://foo.bar"},
+		{ "name" :"otra cosa mas", "url" :"http://foo.bar"}
+	]
+}
