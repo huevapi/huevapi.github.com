@@ -33,7 +33,15 @@ GH = {
 	getRepos: function(){
 		this.api.getOrgRepos('huevapi', function(r){
 			var repoTmpl = Hogan.compile($("#tmpl-repo").html());
+
+			r = _.sortBy(r, function(repo){
+				return new Date(repo.updated_at).getTime() * -1;
+			})
+
 			_.each(r, function(repo){
+				repo.processed = {};
+				repo.processed.lastUpdate = new Date(repo.updated_at).format("mmmm dd, yyyy");
+				console.log(repo);
 				$("#repo-list").append(repoTmpl.render(repo));
 			})
 		})
